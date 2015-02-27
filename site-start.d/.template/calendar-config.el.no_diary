@@ -1,0 +1,28 @@
+;;;; -*- mode: emacs-lisp; coding: utf-8 -*-
+;;;;
+
+;;;; calendar settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+
+;(add-hook 'window-setup-hook 'calendar)                                ; Emacs起動時にカレンダ
+(defvar calendar-date-display-form '(year "-" month "-" day))           ; 日付表示形式(ISO standard)
+(defvar calendar-time-display-form '(24-hours ":" minutes))             ; 時刻表示形式(24時間表示)
+(defvar calendar-week-start-day 1)                                      ; カレンダ開始曜日(月曜日から)
+(defvar calendar-weekend '(0 6))                                        ; 週末設定(土日を休日として扱う)
+
+;; 休日設定
+(setq holiday-general-holidays nil)
+(setq holiday-christian-holidays nil)
+(setq holiday-hebrew-holidays nil)
+(setq holiday-islamic-holidays nil)
+(setq holiday-other-holidays nil)
+(defvar holiday-soloar-holidays nil)
+(setq holiday-local-holidays nil)
+(load "japanese-holidays")
+
+(add-hook 'today-visible-calendar-hook 'japanese-holiday-mark-weekend)  ; カレンダに当日が表示された場合、週末をマーク
+
+
+;;;
+;;; EOF
+;;;

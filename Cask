@@ -33,7 +33,6 @@
 
 ;; Editing
 (depends-on "redo+")
-(depends-on "scratch-ext")
 (depends-on "yasnippet")
 (depends-on "edit-server")
 (depends-on "gmail-message-mode")

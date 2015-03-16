@@ -40,9 +40,6 @@
 ;; Cocoa Emacs (Mac OS X)用
 (defvar run-cocoa-emacs (featurep 'ns))
 
-;; Meadow (Windows)用
-(defvar run-meadow (featurep 'meadow))
-
 
 ;;;; Emacs-Cask ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -402,12 +399,6 @@
 )
 ;; -------------------------------------Mac OS X用
 
-;; Meadow (Windows)用 ----------------------------
-(when run-meadow
-  (gnuserv-start)
-)
-;; ---------------------------- Meadow (Windows)用
-
 
 ;;;; edit-server ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -680,34 +671,6 @@
 ;; -------------------------------------Mac OS X用
 
 
-;; Meadow (Windows)用 ----------------------------
-(when run-meadow
-
-  ;; Cygwin の bash を使う場合
-  (setq explicit-shell-file-name "bash") ; シェルモードで使用するシェル
-  (setq shell-file-name "sh")         ; シェルコマンドで使用するシェル
-  (setq shell-command-switch "-c") ; シェル経由でコマンドを呼び出す際のオプション
-
-  ;; coding-system の設定（日本語Shift_JIS表示）
-  ;; 3.0では設定不要 -> Cygwin 1.7(UTF-8対応)のため、再度設定
-  (add-hook 'shell-mode-hook
-            (lambda ()
-              (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix)))
-
-  (add-hook 'comint-output-filter-functions 'shell-strip-ctrl-m nil t) ;; shell-mode時、^M抑制
-  (setq shell-file-name-chars "~/A-Za-z0-9_^$!#%&{}`'.,:()-") ;; shell-modeでの補完 (for drive letter)
-
-  ;; argument-editing の設定
-  (require 'mw32script)
-  (mw32script-init)
-
-  ;; コマンドプロンプトのサイズに合わせる
-  (setq w32-use-full-screen-buffer nil)
-
-)
-;; ---------------------------- Meadow (Windows)用
-
-
 ;; shell-commandで補完を有効にする
 (require 'shell-command)
 (shell-command-completion-mode)
@@ -730,15 +693,6 @@
 
 ;; wdired
 (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)           ; ファイル名編集モード
-
-;; Meadow (Windows)用 ----------------------------
-(when run-meadow
-
-  ;; ディレクトリを先に表示
-  (setq ls-lisp-dirs-first t)
-
-)
-;; ---------------------------- Meadow (Windows)用
 
 
 ;;;; generic settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

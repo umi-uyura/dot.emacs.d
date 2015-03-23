@@ -299,9 +299,8 @@
   ;; デフォルトフレーム設定（初期フレームを含む全てのフレームへ影響）
   (setq default-frame-alist
         (append (list
-                 '(line-spacing . 0)                    ; 行間
-                 '(tool-bar-lines . 0)          ; ツールバーサイズ
-                 '(font . "ricty-14")                   ; フォント設定
+                 '(line-spacing . 0)            ; 行間
+                 '(tool-bar-lines . 0)          ; ツールバー非表示
                  ) default-frame-alist))
 )
 ;; -------------------------------------Mac OS X用
@@ -314,13 +313,13 @@
 (set-face-foreground 'font-lock-string-face  "magenta")             ; 文字列
 (set-face-foreground 'font-lock-keyword-face "blue")                ; キーワード
 (set-face-foreground 'font-lock-function-name-face "blue")          ; 関数
-(set-face-bold 'font-lock-function-name-face t)                   ; 関数（ボールド指定）
+(set-face-bold 'font-lock-function-name-face t)                     ; 関数（ボールド指定）
 (set-face-foreground 'font-lock-variable-name-face "DodgerBlue")    ; 変数
 (set-face-foreground 'font-lock-type-face "blue")                   ; 型、クラス
 (set-face-foreground 'font-lock-builtin-face "purple")              ; 組み込み関数
 (set-face-foreground 'font-lock-constant-face "purple")             ; 定数、ラベル
 (set-face-foreground 'font-lock-warning-face "blue")                ; 警告
-(set-face-bold 'font-lock-warning-face nil)                       ; 警告（ボールド解除）
+(set-face-bold 'font-lock-warning-face nil)                         ; 警告（ボールド解除）
 (set-face-foreground 'font-lock-preprocessor-face "red")            ; プリプロセッサ
 
 ;; リージョン（暫定マーク）色設定

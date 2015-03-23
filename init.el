@@ -276,6 +276,20 @@
 
 (when window-system
 
+  ;; Rictyフォント設定
+  (set-face-attribute 'default nil
+                      :family "Ricty Discord"
+                      :height 140)
+  (set-fontset-font (frame-parameter nil 'font)
+                    'japanese-jisx0208
+                    (cons "Ricty Discord" "iso10646-1"))
+  (set-fontset-font (frame-parameter nil 'font)
+                    'japanese-jisx0212
+                    (cons "Ricty Discord" "iso10646-1"))
+  (set-fontset-font (frame-parameter nil 'font)
+                    'katakana-jisx0201
+                    (cons "Ricty Discord" "iso10646-1"))
+
 ;; Mac OS X用 ------------------------------------
 (when run-darwin
 
@@ -289,39 +303,6 @@
                  '(tool-bar-lines . 0)          ; ツールバーサイズ
                  '(font . "ricty-14")                   ; フォント設定
                  ) default-frame-alist))
-
-  ;; Mac用フォント設定
-
-  ;; MavericksでEmacsのフォントが可愛くなる問題を解決する - minus9d's diary
-  ;; http://minus9d.hatenablog.com/entry/20131103/1383475472
-  ;;
-  ;; ;; 英語
-  ;; (set-face-attribute 'default nil
-  ;;                     :family "Menlo"
-  ;;                     :height 130)
-  ;;
-  ;; ;; 日本語
-  ;; (set-fontset-font nil 'japanese-jisx0208
-  ;;                   (font-spec :family "Hiragino Kaku Gothic ProN"))
-  ;;
-  ;; ;; 半角と全角の比を1:2にしたければ
-  ;; (setq face-font-rescale-alist
-  ;;       '((".*Hiragino_Kaku_Gothic_ProN.*" . 1.2)))
-
-  ;; CarbonEmacs から GNU Emacs for Mac にしたら日本語が破滅したので直した
-  ;; https://gist.github.com/mitukiii/4365568
-  ;; ;; Monaco 12pt をデフォルトにする
-  ;; (set-face-attribute 'default nil
-  ;;                     :family "Monaco"
-  ;;                     :height 120)
-  ;; ;; 日本語をヒラギノ角ゴProNにする
-  ;; (set-fontset-font "fontset-default"
-  ;;                   'japanese-jisx0208
-  ;;                   '("Hiragino Maru Gothic ProN"))
-  ;; ;; 半角カナをヒラギノ角ゴProNにする
-  ;; (set-fontset-font "fontset-default"
-  ;;                   'katakana-jisx0201
-  ;;                   '("Hiragino Maru Gothic ProN"))
 )
 ;; -------------------------------------Mac OS X用
 

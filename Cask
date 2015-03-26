@@ -30,6 +30,7 @@
 (depends-on "solarized-theme")
 (depends-on "alect-themes")
 (depends-on "rainbow-delimiters")
+(depends-on "smart-cursor-color")
 
 ;; Editing
 (depends-on "redo+")

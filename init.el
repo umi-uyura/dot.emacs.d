@@ -459,6 +459,12 @@
    (cl-callf color-saturate-name (face-foreground face) 30)))
 
 
+;;;; smart-cursor-color ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+
+(smart-cursor-color-mode 1)
+
+
 ;;;; semantic ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 

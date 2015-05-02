@@ -39,6 +39,7 @@
 (depends-on "gmail-message-mode")
 (depends-on "writeroom-mode")
 (depends-on "nyan-mode")
+(depends-on "jaword")
 
 ;; Grep/Find
 (depends-on "color-moccur")

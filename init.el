@@ -779,19 +779,24 @@
 (autoload 'js2-mode "js2-mode" nil t)
 
 (add-to-list 'auto-mode-alist '("\\.js" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.jmk" . js2-mode))
-
-(setq js2-basic-offset 2)
+(add-to-list 'auto-mode-alist '("\\.jmk" . js2-mode))   ; for Appcelerator Alloy JS Makefile
 
 (add-hook 'js2-mode-hook
           '(lambda ()
              (setq tab-width 2
+                   js2-basic-offset 2
                    indent-tabs-mode nil)
 ;;           (set-face-foreground 'js2-external-variable-face "firebrick")
 ;;           (set-face-foreground 'js2-external-variable-face "IndianRed")
              ))
 
 (setq js2-strict-missing-semi-warning nil)      ; 過剰な"missing ; after statement"を抑制(for .json)
+
+;; for shell scripts running via node.js
+(add-to-list 'interpreter-mode-alist '("node" . js2-mode))
+
+;; for JavaScript linting
+(add-hook 'js-mode-hook 'js2-minor-mode)
 
 ;; auto-complete
 (add-hook 'js2-mode-hook 'ac-js2-mode)

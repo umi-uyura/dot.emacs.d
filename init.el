@@ -933,6 +933,12 @@
 (setq css-indent-offset 2)
 
 
+;;;; less-css-mode settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+
+(add-hook 'less-css-mode-hook 'ac-css-mode-setup)
+
+
 ;;;; markdown-mode settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 

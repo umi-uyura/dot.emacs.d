@@ -927,6 +927,12 @@
 (add-to-list 'auto-mode-alist '("\\.styl$" . stylus-mode))
 
 
+;;;; css-mode settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+
+(setq css-indent-offset 2)
+
+
 ;;;; markdown-mode settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 

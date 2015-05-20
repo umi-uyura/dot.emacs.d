@@ -61,6 +61,7 @@
 (depends-on "coffee-mode")
 (depends-on "jade-mode")
 (depends-on "stylus-mode")
+(depends-on "less-css-mode")
 
 ;; Programming - Ruby
 (depends-on "ruby-mode")

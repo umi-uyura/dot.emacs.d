@@ -62,6 +62,7 @@
 (depends-on "jade-mode")
 (depends-on "stylus-mode")
 (depends-on "less-css-mode")
+(depends-on "rainbow-mode")
 
 ;; Programming - Ruby
 (depends-on "ruby-mode")

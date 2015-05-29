@@ -45,6 +45,7 @@
 (depends-on "color-moccur")
 (depends-on "grep-a-lot")
 (depends-on "igrep")
+(depends-on "pt")
 
 ;; Shell
 (depends-on "shell-command")

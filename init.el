@@ -432,7 +432,7 @@
 ;;;; icomplete-mode ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 
-(icomplete-mode t)
+(icomplete-mode nil)
 
 
 ;;;; redo+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -526,6 +526,16 @@
 (require 'recentf-ext)
 
 (define-key global-map (kbd "C-x F") 'recentf-open-files)           ; 最近使用したファイルから開く
+
+
+;;;; helm-mode ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+
+(helm-mode 1)
+
+(define-key helm-map (kbd "C-h") 'delete-backward-char)
+(define-key helm-find-files-map (kbd "C-h") 'delete-backward-char)
+
 
 
 ;;;; color-moccur.el + moccur-edit.el ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

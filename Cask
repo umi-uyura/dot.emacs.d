@@ -82,6 +82,9 @@
 (depends-on "ac-html")
 (depends-on "ac-js2")
 
+;; Helm
+(depends-on "helm")
+
 ;; Utility
 (depends-on "japanese-holidays")
 (depends-on "sudo-ext")

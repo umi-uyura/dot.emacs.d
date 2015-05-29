@@ -46,6 +46,7 @@
 (depends-on "grep-a-lot")
 (depends-on "igrep")
 (depends-on "pt")
+(depends-on "wgrep-pt")
 
 ;; Shell
 (depends-on "shell-command")
@@ -85,6 +86,7 @@
 
 ;; Helm
 (depends-on "helm")
+(depends-on "wgrep-helm")
 
 ;; Utility
 (depends-on "japanese-holidays")

@@ -83,6 +83,7 @@
 (depends-on "auto-complete")
 (depends-on "ac-html")
 (depends-on "ac-js2")
+(depends-on "ac-emoji")
 
 ;; Helm
 (depends-on "helm")

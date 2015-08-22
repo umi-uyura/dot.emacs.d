@@ -291,6 +291,11 @@
                     'katakana-jisx0201
                     (cons "Ricty Discord" "iso10646-1"))
 
+  ;; Emojiフォント設定
+  (set-fontset-font
+   t 'symbol
+   (font-spec :family "Apple Color Emoji") nil 'prepend)
+
 ;; Mac OS X用 ------------------------------------
 (when run-darwin
 
@@ -596,6 +601,13 @@
 
 ;; igrep.elを使用する場合
 (grep-a-lot-advise igrep)
+
+
+;;;; ac-emoji ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+
+(add-hook 'markdown-mode-hook 'ac-emoji-setup)
+(add-hook 'git-commit-mode-hook 'ac-emoji-setup)
 
 
 ;;;; jaword ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -1119,8 +1131,19 @@
 (require 'auto-complete-config)
 (ac-config-default)
 
+(dolist (mode '(git-commit-mode
+                markdown-mode
+                gfm-mode
+                fundamental-mode
+                text-mode))
+  (add-to-list 'ac-modes mode))
+
 (custom-set-variables
- '(ac-comphist-file (concat DOT_EMACS_VAR "/ac-comphist.dat")))
+ '(ac-comphist-file (concat DOT_EMACS_VAR "/ac-comphist.dat"))
+ '(ac-auto-start 3)
+ '(ac-quick-help-delay 1.0)
+ '(ac-use-fuzzy t)
+ )
 
 
 ;;;; flycheck settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

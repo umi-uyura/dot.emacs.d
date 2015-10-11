@@ -999,22 +999,6 @@
 (add-hook 'markdown-mode-hook 'my-markdown-mode-hook)
 
 
-;;;; emacs-livedown settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; see: https://github.com/shime/emacs-livedown
-
-(add-to-list 'load-path (expand-file-name (concat DOT_EMACS_LISP "/emacs-livedown")))
-
-(custom-set-variables
- '(livedown:autostart nil)  ; automatically open preview when opening markdown files
- '(livedown:open t)         ; automatically open the browser window
- '(livedown:port 1337))     ; port for livedown server
-
-(require 'livedown)
-
-(global-set-key (kbd "C-c m m") 'livedown:preview)
-(global-set-key (kbd "C-c m k") 'livedown:kill)
-
-
 ;;;; writeroom-mode settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 

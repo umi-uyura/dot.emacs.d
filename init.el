@@ -1271,5 +1271,8 @@
 
 
 ;;;
-;;; .emacs EOF
+;;; EOF
 ;;;
+
+(provide 'init)
+;;; init.el ends here

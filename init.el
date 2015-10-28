@@ -638,13 +638,6 @@
 (global-set-key (kbd "C-c i D") 'osx-dictionary-search-input)
 
 
-;;;; emacs-emoji-cheat-sheet ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; See: https://github.com/ShingoFukuyama/emacs-emoji-cheat-sheet
-;;
-
-(require 'emoji-cheat-sheet)
-
-
 ;;;; mac-open-folder.el ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; カレントディレクトリをFinder/Terminal/iTerm2で開く (for Mac OS X)
 ;;

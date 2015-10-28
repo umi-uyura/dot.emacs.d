@@ -802,11 +802,22 @@
              (setq tab-width 2
                    js2-basic-offset 2
                    indent-tabs-mode nil)
-;;           (set-face-foreground 'js2-external-variable-face "firebrick")
-;;           (set-face-foreground 'js2-external-variable-face "IndianRed")
              ))
 
-(setq js2-strict-missing-semi-warning nil)      ; 過剰な"missing ; after statement"を抑制(for .json)
+;; js2-modeの文法チェックを無効
+(setq js2-include-browser-externs nil)
+(setq js2-mode-show-parse-errors nil)
+(setq js2-mode-show-strict-warnings nil)
+(setq js2-highlight-external-variables nil)
+(setq js2-include-jslint-globals nil)
+;; (setq js2-strict-trailing-comma-warning nil)
+;; (setq js2-strict-missing-semi-warning nil)              ; 過剰な"missing ; after statement"を抑制(for .json)
+;; (setq js2-strict-inconsistent-return-warning nil)
+;; (setq js2-strict-cond-assign-warning nil)
+;; (setq js2-strict-var-redeclaration-warning nil)
+;; (setq js2-strict-var-hides-function-arg-warning nil)
+;; (setq js2-missing-semi-one-line-override nil)
+
 
 ;; for shell scripts running via node.js
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
@@ -815,7 +826,8 @@
 (add-hook 'js-mode-hook 'js2-minor-mode)
 
 ;; auto-complete
-(add-hook 'js2-mode-hook 'ac-js2-mode)
+; "File mode specification error: (invalid-function ac-define-source)" が出るため、一時的にコメントアウト
+;; (add-hook 'js2-mode-hook 'ac-js2-mode)
 
 
 ;;;; json-mode settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -922,6 +934,9 @@
   (setq tab-width 2)
   (setq web-mode-enable-current-element-highlight t)    ; 現在のHTMLエレメントを強調する
   (setq web-mode-enable-current-column-highlight t)     ; 現在の縦列を強調する
+  (lambda ()
+    (when (equal web-mode-content-type "jsx")
+      (add-to-list 'web-mode-comment-formats '("jsx" . "//" ))))
   )
 (add-hook 'web-mode-hook 'my-web-mode-hook)
 
@@ -1130,23 +1145,16 @@
 
 (add-hook 'after-init-hook 'global-flycheck-mode)
 
-;; flycheck-pos-tip.el
 (eval-after-load 'flycheck
   '(custom-set-variables
-    '(flycheck-display-errors-function 'flycheck-pos-tip-error-messages)))
+    '(flycheck-display-errors-function 'flycheck-pos-tip-error-messages)    ; flycheck-pos-tip
+    '(flycheck-disabled-checkers '(javascript-jshint javascript-jscs))
+    ))
 
-;; flycheck to JSX for web-mode
-(flycheck-define-checker jsxhint-checker
-  "A JSX syntax and style checker based on JSXHint."
-  :command ("jsxhint" source)
-  :error-patterns
-  ((error line-start (1+ nonl) ": line " line ", col " column ", " (message) line-end))
-  :modes (web-mode))
 (add-hook 'web-mode-hook
           (lambda ()
             (when (equal web-mode-content-type "jsx")
-              ;; enable flycheck
-              (flycheck-select-checker 'jsxhint-checker)
+              (flycheck-add-mode 'javascript-eslint 'web-mode)
               (flycheck-mode))))
 
 

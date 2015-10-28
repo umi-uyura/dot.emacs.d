@@ -583,7 +583,7 @@
 ;;   C-c C-r : Remove the highlight in the region (The Changes doesn't apply to files)
 ;;
 
-(require 'grep-edit)
+;; (require 'grep-edit)
 
 
 ;;;; grep-a-lot.el ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

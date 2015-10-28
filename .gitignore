@@ -4,7 +4,7 @@
 
 # /site-bin/*
 # /site-lisp/*
-# /site-start.d/*
+/site-start.d/*.el
 /var/*
 !.gitkeep
 
@@ -67,4 +67,3 @@ tramp
 
 # cask packages
 .cask/
-

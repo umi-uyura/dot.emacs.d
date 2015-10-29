@@ -96,6 +96,7 @@
 (defvar auto-install-directory (concat DOT_EMACS_ELISP "/"))    ; 最後にスラッシュが必要・・・
 
 (when (require 'auto-install nil t)
+  (setq auto-install-use-wget t)
   (auto-install-update-emacswiki-package-name t)
   (auto-install-compatibility-setup)
 )

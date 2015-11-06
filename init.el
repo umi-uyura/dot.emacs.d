@@ -796,7 +796,8 @@
 (autoload 'js2-mode "js2-mode" nil t)
 
 (add-to-list 'auto-mode-alist '("\\.js" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.jmk" . js2-mode))   ; for Appcelerator Alloy JS Makefile
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-jsx-mode))    ; for JSX
+(add-to-list 'auto-mode-alist '("\\.jmk" . js2-mode))           ; for Appcelerator Alloy JS Makefile
 
 (add-hook 'js2-mode-hook
           '(lambda ()
@@ -922,7 +923,6 @@
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
 
 (defun my-web-mode-hook ()
   "Hooks for Web mode."
@@ -1157,6 +1157,11 @@
             (when (equal web-mode-content-type "jsx")
               (flycheck-add-mode 'javascript-eslint 'web-mode)
               (flycheck-mode))))
+
+(add-hook 'js2-jsx-mode-hook
+          (lambda ()
+            (flycheck-add-mode 'javascript-eslint 'js2-jsx-mode)
+            (flycheck-mode)))
 
 
 ;;;; howm settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

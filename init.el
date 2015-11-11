@@ -1203,10 +1203,8 @@
 (autoload 'svn-status "dsvn" "Run `svn status'." t)
 (autoload 'svn-update "dsvn" "Run `svn update'." t)
 
-(eval-after-load "dsvn"
-  '(progn
-     (setenv "LC_ALL" "ja_JP.UTF-8")
-     ))
+(with-eval-after-load "dsvn"
+  (setenv "LC_ALL" "ja_JP.UTF-8"))
 
 
 ;;;; nyan-mode settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

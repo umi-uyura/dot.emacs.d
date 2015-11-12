@@ -1142,15 +1142,20 @@
 ;;;; flycheck settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 
-(require 'flycheck)
-
 (add-hook 'after-init-hook 'global-flycheck-mode)
 
-(eval-after-load 'flycheck
-  '(custom-set-variables
-    '(flycheck-display-errors-function 'flycheck-pos-tip-error-messages)    ; flycheck-pos-tip
-    '(flycheck-disabled-checkers '(javascript-jshint javascript-jscs))
-    ))
+(custom-set-variables
+ ;'(flycheck-display-errors-function 'flycheck-pos-tip-error-messages)
+ '(flycheck-disabled-checkers '(javascript-jshint javascript-jscs))
+ '(flycheck-error-list-format [("Line" 4 flycheck-error-list-entry-< :right-align t)
+                               ("Col" 3 nil :right-align t)
+                               ("Level" 8 flycheck-error-list-entry-level-<)
+                               ("ID" 20 t)
+                               ("Message" 0 t)
+                               (" (Checker)" 8 t)]))
+
+(with-eval-after-load 'flycheck
+  (flycheck-pos-tip-mode))
 
 (add-hook 'web-mode-hook
           (lambda ()

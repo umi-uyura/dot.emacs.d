@@ -632,6 +632,25 @@
 (global-relative-buffers-mode)
 
 
+;;;; Projectile ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+
+(projectile-global-mode)
+
+;;;; for Titanium develop
+
+;; プロジェクトルートを識別するファイルを追加
+(add-to-list 'projectile-project-root-files "tiapp.xml")
+(add-to-list 'projectile-project-root-files "timodule.xml")
+
+;; 関連するファイルの紐付け
+(add-to-list 'projectile-other-file-alist '("js" . ("jade" "styl")))
+(add-to-list 'projectile-other-file-alist '("jade" . ("js" "styl" "xml")))
+(add-to-list 'projectile-other-file-alist '("styl" . ("js" "jade" "tss")))
+(add-to-list 'projectile-other-file-alist '("xml" . ("jade")))
+(add-to-list 'projectile-other-file-alist '("tss" . ("styl")))
+
+
 ;;;; osx-dictionary ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 

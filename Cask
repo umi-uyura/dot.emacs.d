@@ -25,6 +25,7 @@
 
 ;; Package Management
 (depends-on "auto-install")
+(depends-on "paradox")
 
 ;; Look and feel
 (depends-on "solarized-theme")

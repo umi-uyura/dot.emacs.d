@@ -374,7 +374,8 @@
 
 ;(load-theme 'tango-dark t)
 ;(load-theme 'solarized-dark t)
-(load-theme 'alect-dark t)
+;(load-theme 'alect-dark t)
+(load-theme 'ample-zen t)
 
 
 ;;;; emacs server ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

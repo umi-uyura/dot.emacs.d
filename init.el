@@ -493,17 +493,6 @@
 (setq uniquify-ignore-buffers-re "*[^*]+*")
 
 
-;;;; tempbuf.el ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; バッファを自動的に破棄する
-;;
-
-(require 'tempbuf)
-
-;; 有効にする各モード
-(add-hook 'dired-mode-hook 'turn-on-tempbuf-mode)                   ; Diredモードで有効
-;(add-hook 'find-file-hook 'turn-on-tempbuf-mode)                   ; ファイルを開いたら有効
-
-
 ;;;; bookmark.el ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 

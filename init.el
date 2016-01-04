@@ -446,8 +446,8 @@
 ;;;; redo+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 
-(require 'redo+)
-(define-key global-map (kbd "C-M-/") 'redo)
+;; (require 'redo+)
+;; (define-key global-map (kbd "C-M-/") 'redo)
 
 
 ;;;; rainbow-delimiters ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

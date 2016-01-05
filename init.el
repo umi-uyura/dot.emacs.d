@@ -526,9 +526,8 @@
                      "!semantic.cache$"))    ; Semanticキャッシュファイルを除外
  )
 
-(require 'recentf-ext)
-
-(define-key global-map (kbd "C-x F") 'recentf-open-files)           ; 最近使用したファイルから開く
+;(require 'recentf-ext)
+;(define-key global-map (kbd "C-x F") 'recentf-open-files)           ; 最近使用したファイルから開く
 
 
 ;;;; helm-mode ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -536,6 +535,8 @@
 
 (helm-mode 1)
 
+(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
+(define-key global-map (kbd "C-x F") 'helm-recentf)
 (define-key helm-map (kbd "C-h") 'delete-backward-char)
 (define-key helm-find-files-map (kbd "C-h") 'delete-backward-char)
 

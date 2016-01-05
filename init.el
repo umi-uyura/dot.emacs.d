@@ -1008,16 +1008,11 @@
       (cons '("\\.md" . gfm-mode) auto-mode-alist))
 
 (setq markdown-command "multimarkdown")
+(setq markdown-open-command "/Applications/MacDown.app/Contents/MacOS/MacDown")
 (setq markdown-indent-on-enter nil)
 
 ;; Hooks
 (defun my-markdown-mode-hook ()
-  (defun markdown-preview-file ()
-    "run MadDown.app on the current file and revert the buffer"
-    (interactive)
-    (shell-command
-      (format "open -a MacDown.app %s" (shell-quote-argument (buffer-file-name)))))
-  (local-set-key (kbd "C-c C-c P") 'markdown-preview-file)
   (set (make-local-variable 'whitespace-action) nil)    ; 自動空白除去を無効
   )
 (add-hook 'markdown-mode-hook 'my-markdown-mode-hook)

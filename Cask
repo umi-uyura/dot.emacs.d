@@ -96,6 +96,7 @@
 (depends-on "japanese-holidays")
 (depends-on "sudo-ext")
 (depends-on "recentf-ext")
+(depends-on "tempbuf")
 (depends-on "open-junk-file")
 (depends-on "relative-buffers")
 (depends-on "osx-dictionary")

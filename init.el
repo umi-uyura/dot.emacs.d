@@ -450,11 +450,12 @@
 (add-hook 'dired-mode-hook 'turn-on-tempbuf-mode)
 
 
-;;;; redo+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; undo-tree ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 
-;; (require 'redo+)
-;; (define-key global-map (kbd "C-M-/") 'redo)
+(global-undo-tree-mode t)
+(define-key global-map (kbd "C-M-/") 'undo-tree-redo)
+(define-key undo-tree-map "\C-_" nil)
 
 
 ;;;; rainbow-delimiters ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

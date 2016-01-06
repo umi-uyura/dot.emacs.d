@@ -35,7 +35,7 @@
 (depends-on "smart-cursor-color")
 
 ;; Editing
-(depends-on "redo+")
+(depends-on "undo-tree")
 (depends-on "yasnippet")
 (depends-on "edit-server")
 (depends-on "gmail-message-mode")

@@ -446,6 +446,7 @@
 ;;;; tempbuf ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 
+(require 'tempbuf)
 (add-hook 'dired-mode-hook 'turn-on-tempbuf-mode)
 
 

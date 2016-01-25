@@ -331,7 +331,7 @@
 
 ;; リージョン（暫定マーク）色設定
 ;(set-face-foreground 'region "white")                              ; 前景色
-(set-face-background 'region "gray")                                ; 背景色
+(set-face-background 'region "lightgray")                           ; 背景色
 
 ;; モードライン色設定
 ;(set-face-foreground 'modeline "snow")                             ; 前景色

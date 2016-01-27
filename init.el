@@ -538,10 +538,20 @@
 (helm-mode 1)
 
 ;(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
+(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
+(global-set-key (kbd "C-x F") 'helm-recentf)
+(global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (define-key global-map (kbd "C-x F") 'helm-recentf)
 (define-key helm-map (kbd "C-h") 'delete-backward-char)
 (define-key helm-find-files-map (kbd "C-h") 'delete-backward-char)
 
+;; kill-bufferはhelmを使わない
+(add-to-list 'helm-completing-read-handlers-alist '(kill-buffer . nil))
+
+; バッファ名を長く表示
+(setq helm-buffer-max-length 50)
 
 
 ;;;; color-moccur.el + moccur-edit.el ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

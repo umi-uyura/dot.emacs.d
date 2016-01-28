@@ -732,6 +732,12 @@
 ;; wdired
 (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)           ; ファイル名編集モード
 
+; 2つのdiredバッファを開いている場合、移動/コピーの対象がもう一方のバッファになる
+(setq dired-dwim-target t)
+
+; インクリメンタルサーチはファイル名だけ対象
+(setq dired-isearch-filenames t)
+
 
 ;;;; generic settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;

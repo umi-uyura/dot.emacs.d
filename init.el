@@ -375,7 +375,11 @@
 ;(load-theme 'tango-dark t)
 ;(load-theme 'solarized-dark t)
 ;(load-theme 'alect-dark t)
+
 (load-theme 'ample-zen t)
+(custom-theme-set-faces 'ample-zen
+                        '(region ((t (:background "#4c4c4c"))))     ; 選択範囲
+                        )
 
 
 ;;;; emacs server ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

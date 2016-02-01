@@ -650,6 +650,14 @@
 
 (projectile-global-mode)
 
+(defconst PROJECTILE_TEMP (concat DOT_EMACS_VAR "/projectile"))
+
+(custom-set-variables
+ '(projectile-cache-file (concat PROJECTILE_TEMP "/projectile.cache"))
+ '(projectile-known-projects-file (concat PROJECTILE_TEMP "/projectile-bookmarks.eld"))
+ )
+
+
 ;;;; for Titanium develop
 
 ;; プロジェクトルートを識別するファイルを追加

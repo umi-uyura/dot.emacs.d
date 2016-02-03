@@ -878,6 +878,26 @@
 ;; (add-hook 'js2-mode-hook 'ac-js2-mode)
 
 
+;;;; tern-mode settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+
+(add-hook 'js-mode-hook
+          '(lambda ()
+             (tern-mode t)
+             (when (locate-library "tern")
+               (setq tern-command '("tern" "--no-port-file"))
+               (tern-mode t)
+               (eval-after-load 'tern
+                 '(progn
+                    (require 'tern-auto-complete)
+                    (tern-ac-setup))))))
+
+(eval-after-load 'tern
+   '(progn
+      (require 'tern-auto-complete)
+      (tern-ac-setup)))
+
+
 ;;;; json-mode settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 

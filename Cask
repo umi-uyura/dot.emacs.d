@@ -68,6 +68,8 @@
 (depends-on "stylus-mode")
 (depends-on "less-css-mode")
 (depends-on "rainbow-mode")
+(depends-on "tern")
+(depends-on "tern-auto-complete")
 
 ;; Programming - Ruby
 (depends-on "ruby-mode")

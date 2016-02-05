@@ -452,6 +452,7 @@
 
 (require 'tempbuf)
 (add-hook 'dired-mode-hook 'turn-on-tempbuf-mode)
+(add-hook 'magit-mode-hook 'turn-on-tempbuf-mode)
 
 
 ;;;; undo-tree ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

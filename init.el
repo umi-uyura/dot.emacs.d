@@ -884,7 +884,6 @@
 
 (add-hook 'js-mode-hook
           '(lambda ()
-             (tern-mode t)
              (when (locate-library "tern")
                (setq tern-command '("tern" "--no-port-file"))
                (tern-mode t)

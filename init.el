@@ -1057,7 +1057,7 @@
       (cons '("\\.md" . gfm-mode) auto-mode-alist))
 
 (setq markdown-command "multimarkdown")
-(setq markdown-open-command "/Applications/MacDown.app/Contents/MacOS/MacDown")
+(setq markdown-open-command "openmacdown")
 (setq markdown-indent-on-enter nil)
 
 ;; Hooks

@@ -1,4 +1,10 @@
 #!/bin/sh
+
+RUNNING=`ps x | grep [M]acDown`
+if [ "$RUNNING" != "" ]; then
+  killall "MacDown"
+fi
+
 if [ $1 ]; then
     open -a "MacDown" $1;
 else

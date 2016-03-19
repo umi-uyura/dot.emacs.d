@@ -224,6 +224,8 @@
 (define-key global-map (kbd "C-c t") 'toggle-truncate-lines)        ; 行折り返しのON/OFF
 (define-key global-map (kbd "M-n") 'next-error)                     ; 次のエラー行へジャンプ
 (define-key global-map (kbd "M-p") 'previous-error)                 ; 前のエラー行へジャンプ
+(define-key isearch-mode-map (kbd "C-h") 'isearch-del-char)         ; インクリメンタルサーチ中でもキーワード削除可能
+
 
 ;; 分割したウィンドウ間をShift+カーソルキーで移動可能とする
 (windmove-default-keybindings)

@@ -28,9 +28,9 @@
 (depends-on "paradox")
 
 ;; Look and feel
-(depends-on "solarized-theme")
-(depends-on "alect-themes")
 (depends-on "ample-zen-theme")
+(depends-on "alect-themes")
+(depends-on "moe-theme")
 (depends-on "rainbow-delimiters")
 (depends-on "smart-cursor-color")
 

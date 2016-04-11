@@ -84,6 +84,7 @@
 (depends-on "markdown-toc")
 (depends-on "yaml-mode")
 (depends-on "csv-mode")
+(depends-on "cask-mode")
 
 ;; Auto complete
 (depends-on "auto-complete")

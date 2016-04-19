@@ -1037,6 +1037,12 @@
 (setq css-indent-offset 2)
 
 
+;;;; sass-mode settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . sass-mode))
+
+
 ;;;; less-css-mode settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 

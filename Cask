@@ -67,6 +67,7 @@
 (depends-on "coffee-mode")
 (depends-on "jade-mode")
 (depends-on "stylus-mode")
+(depends-on "sass-mode")
 (depends-on "less-css-mode")
 (depends-on "rainbow-mode")
 (depends-on "tern")

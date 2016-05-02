@@ -107,6 +107,5 @@
 
 ;; External services
 (depends-on "google-translate")
-(depends-on "codic")
 (depends-on "dash-at-point")
 (depends-on "wakatime-mode")

@@ -79,6 +79,9 @@
 (depends-on "ruby-end")
 (depends-on "inf-ruby")
 
+;; Programming - Python
+(depends-on "python-mode")
+
 ;; Programming
 (depends-on "flycheck-pos-tip")
 (depends-on "markdown-mode")

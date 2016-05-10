@@ -81,6 +81,7 @@
 
 ;; Programming - Python
 (depends-on "python-mode")
+(depends-on "jedi")
 
 ;; Programming
 (depends-on "flycheck-pos-tip")

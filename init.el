@@ -1237,8 +1237,7 @@
                                         ("Col" 3 nil :right-align t)
                                         ("Level" 8 flycheck-error-list-entry-level-<)
                                         ("ID" 20 t)
-                                        ("Message" 0 t)
-                                        (" (Checker)" 8 t)])
+                                        ("Message (Checker)" 0 t)])
   (flycheck-pos-tip-mode))
 
 (add-hook 'web-mode-hook

@@ -1021,14 +1021,18 @@
                          ac-source-html-attribute)))
 
 
-;;;; jade-mode settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; pug-mode settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; for Jade
 ;;
 
-(require 'sws-mode)
-(require 'jade-mode)
+(add-to-list 'auto-mode-alist '("\\.jade\\'" . pug-mode))
+(add-to-list 'auto-mode-alist '("\\.pug\\'" . pug-mode))
 
-(add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
-(add-to-list 'auto-mode-alist '("\\.styl$" . stylus-mode))
+
+;;;; stylus-mode settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Included in jade-mode
+;;
+
 
 
 ;;;; css-mode settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

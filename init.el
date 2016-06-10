@@ -531,7 +531,7 @@
 
 (custom-set-variables
  '(recentf-save-file (concat DOT_EMACS_VAR "/recentf"))
- '(recentf-max-saved-items 500)
+ '(recentf-max-saved-items 3000)
  '(recentf-exclude '("^/[^/:]+:"             ; Trampリモートファイル形式を除外
                      "!semantic.cache$"))    ; Semanticキャッシュファイルを除外
  )

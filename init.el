@@ -1288,6 +1288,9 @@
 
 (global-set-key (kbd "C-c m s") 'magit-status)         ; git status
 
+;; 今居るhunkの行内の差分に色付けする
+(setq magit-diff-refine-hunk t)
+
 
 ;;;; dsvn settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;

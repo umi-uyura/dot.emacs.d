@@ -645,7 +645,7 @@
 
 (require 'open-junk-file)
 (setq open-junk-file-format (concat DOT_EMACS_VAR "/junk/%Y-%m-%d-%H%M%S."))
-(define-key global-map (kbd "C-c C-j") 'open-junk-file)             ; ジャンクファイル作成
+(define-key global-map (kbd "C-c J") 'open-junk-file)             ; ジャンクファイル作成
 
 
 ;;;; relative-buffers ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

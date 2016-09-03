@@ -1,0 +1,12 @@
+#!/bin/sh
+
+RUNNING=`ps x | grep [T]ypora`
+if [ "$RUNNING" != "" ]; then
+  killall "Typora"
+fi
+
+if [ "$1" ]; then
+    open -a "Typora" "$1";
+else
+    open -a "Typora";
+fi

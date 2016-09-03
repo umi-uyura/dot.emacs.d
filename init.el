@@ -1082,7 +1082,7 @@
       (cons '("\\.md" . gfm-mode) auto-mode-alist))
 
 (setq markdown-command "multimarkdown")
-(setq markdown-open-command "openmacdown")
+(setq markdown-open-command "opentypora")
 (setq markdown-indent-on-enter nil)
 
 ;; Hooks

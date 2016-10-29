@@ -33,7 +33,7 @@
 (depends-on "moe-theme")
 (depends-on "rainbow-delimiters")
 (depends-on "smart-cursor-color")
-(depends-on "ergoemacs-status")
+;; (depends-on "ergoemacs-status")
 
 ;; Editing
 (depends-on "undo-tree")

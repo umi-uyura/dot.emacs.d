@@ -490,13 +490,6 @@
 (smart-cursor-color-mode 1)
 
 
-;;;; ergoemacs-status ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-
-(require 'ergoemacs-status)
-(ergoemacs-status-mode)
-
-
 ;;;; semantic ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 

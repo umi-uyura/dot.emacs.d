@@ -85,6 +85,10 @@
 (depends-on "python-mode")
 (depends-on "jedi")
 
+;; Programming - Scala
+(depends-on "ensime")
+(depends-on "play-routes-mode")
+
 ;; Programming
 (depends-on "flycheck-pos-tip")
 (depends-on "markdown-mode")

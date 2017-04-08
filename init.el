@@ -789,8 +789,8 @@
 ;  (setq c-tab-always-indent nil)                               ; TABキーでインデント（スペース入力）実施：無効
   (setq comment-empty-lines t)                                  ; 複数行コメント化時、空行も対象とする：有効
 ;  (setq comment-style 'multi-line)                             ; コメントスタイル
-  (which-function-mode t)                                       ; 現在位置の関数名を表示するマイナーモード（see: which-func-mode settings)
-  (which-func-show-header)
+  ;; (which-function-mode t)                                       ; 現在位置の関数名を表示するマイナーモード（see: which-func-mode settings)
+  ;; (which-func-show-header)
   ;; キーバインド
   (define-key c-mode-base-map [f1] 'manual-entry)               ; カーソル下の単語のman
 ;;   (define-key c-mode-base-map [f4] 'next-error)                  ; 次のエラー行へジャンプ（VC++風）

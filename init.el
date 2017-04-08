@@ -630,8 +630,8 @@
 ;;;; jaword ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 
-(require 'jaword)
-(global-jaword-mode)
+;; (require 'jaword)
+;; (global-jaword-mode)
 
 
 ;;;; open-junk-file.el ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

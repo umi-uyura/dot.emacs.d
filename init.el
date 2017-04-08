@@ -144,7 +144,7 @@
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq inhibit-startup-message t)                ; 起動時画面非表示
-(setq confirm-kill-emacs 'y-or-n-p)             ; 終了確認
+;(setq confirm-kill-emacs 'y-or-n-p)             ; 終了確認
 
 ;; ユーザ情報
 (load "user-config")

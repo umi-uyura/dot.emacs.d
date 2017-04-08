@@ -13,7 +13,7 @@
 ;;;; バージョン識別子
 
 ;; メジャーバージョン
-(defvar run-emacs24 (equal emacs-major-version 24))
+(defvar run-emacs24 (>= emacs-major-version 24))
 
 ;;;; プラットフォーム識別子
 

@@ -85,6 +85,9 @@
 (depends-on "python-mode")
 (depends-on "jedi")
 
+;; Programming - Java
+(depends-on "gradle-mode")
+
 ;; Programming - Scala
 (depends-on "ensime")
 (depends-on "play-routes-mode")

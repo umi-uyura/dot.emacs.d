@@ -128,8 +128,8 @@
   ;; Google日本語入力連携
   (mac-set-input-method-parameter "com.google.inputmethod.Japanese.base" `title "あ")
 
-  ;; '\' を優先
-  ;(mac-translate-from-yen-to-backslash)
+  ;; '\' を優先 -> '¥' が入力できなくなるため削除
+  ;; (mac-translate-from-yen-to-backslash)
 
   ;; minibuffer 内は英数モードにする
   (add-hook 'minibuffer-setup-hook 'mac-change-language-to-us)

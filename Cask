@@ -25,7 +25,7 @@
 
 ;; Package Management
 (depends-on "auto-install")
-(depends-on "paradox")
+;; (depends-on "paradox")
 
 ;; Look and feel
 (depends-on "ample-zen-theme")

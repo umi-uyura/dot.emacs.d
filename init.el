@@ -160,7 +160,8 @@
 (setq-default tab-width 4)                      ; タブ幅
 (setq-default indent-tabs-mode nil)             ; インデントにタブ文字を使用しない
 (setq next-line-add-newlines nil)               ; バッファ最終行でnext-line時、行挿入抑止
-(setq visible-bell t)                           ; エラー時、画面をフラッシュ
+;; (setq visible-bell t)                           ; エラー時、画面をフラッシュ
+(setq ring-bell-function 'ignore)
 (fset 'yes-or-no-p 'y-or-n-p)                   ; "yes or no"を"y or n"にする
 (setq read-buffer-completion-ignore-case t)     ; バッファー絞り込み時に大文字小文字の区別をしない
 

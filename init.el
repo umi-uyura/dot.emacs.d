@@ -1078,10 +1078,12 @@
 
 (setq markdown-command "multimarkdown")
 (setq markdown-open-command "opentypora")
-(setq markdown-indent-on-enter nil)
+(setq markdown-indent-on-enter t)
+(setq markdown-list-indent-width 2)
 
 ;; Hooks
 (defun my-markdown-mode-hook ()
+  (setq tab-width 2)
   (set (make-local-variable 'whitespace-action) nil)    ; 自動空白除去を無効
   )
 (add-hook 'markdown-mode-hook 'my-markdown-mode-hook)

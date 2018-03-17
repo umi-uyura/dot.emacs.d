@@ -121,5 +121,5 @@
 
 ;; External services
 (depends-on "google-translate")
-(depends-on "dash-at-point")
-(depends-on "wakatime-mode")
+;; (depends-on "dash-at-point")
+;; (depends-on "wakatime-mode")

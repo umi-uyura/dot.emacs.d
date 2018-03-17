@@ -52,6 +52,7 @@
 (depends-on "igrep")
 (depends-on "pt")
 (depends-on "wgrep-pt")
+(depends-on "rg")
 
 ;; Shell
 (depends-on "shell-command")

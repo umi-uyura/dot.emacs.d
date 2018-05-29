@@ -76,6 +76,7 @@
 (depends-on "tern")
 (depends-on "tern-auto-complete")
 (depends-on "js-doc")
+(depends-on "web-beautify")
 
 ;; Programming - Ruby
 (depends-on "ruby-mode")

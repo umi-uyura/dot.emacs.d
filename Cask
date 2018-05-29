@@ -75,6 +75,7 @@
 (depends-on "rainbow-mode")
 (depends-on "tern")
 (depends-on "tern-auto-complete")
+(depends-on "js-doc")
 
 ;; Programming - Ruby
 (depends-on "ruby-mode")

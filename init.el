@@ -855,6 +855,8 @@
              (setq tab-width 2
                    js2-basic-offset 2
                    indent-tabs-mode nil)
+             (local-set-key (kbd "C-c i") 'js-doc-insert-function-doc)
+             (local-set-key (kbd "@") 'js-doc-insert-tag)
              ))
 
 ;; js2-modeの文法チェックを無効

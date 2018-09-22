@@ -39,7 +39,6 @@
 (depends-on "undo-tree")
 (depends-on "yasnippet")
 (depends-on "edit-server")
-(depends-on "gmail-message-mode")
 (depends-on "writeroom-mode")
 (depends-on "nyan-mode")
 (depends-on "jaword")

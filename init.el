@@ -1348,29 +1348,6 @@
 (global-set-key (kbd "C-c g T") 'google-translate-smooth-translate)
 
 
-;;;; gmail-message settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-
-(custom-set-variables
- '(ham-mode-markdown-to-html-command
-   (quote
-    ; GitHub flavored Markdownを使う
-    ("/usr/local/bin/pandoc" "--from" "markdown_github" "--to" "html" "--email-obfuscation" "none" file)))
- )
-
-
-;;;; dash-at-point settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-
-(add-to-list 'dash-at-point-mode-alist
-             '(css-mode . "css,bootstrap,foundation,less,awesome,cordova,phonegap,titanium"))
-(add-to-list 'dash-at-point-mode-alist '(jade-mode . "jade,titanium"))
-(add-to-list 'dash-at-point-mode-alist '(js2-mode . "javascript,backbone,angularjs,nodejs,titanium"))
-(add-to-list 'dash-at-point-mode-alist '(stylus-mode . "css,stylus,titanium"))
-
-(global-set-key (kbd "C-c d") 'dash-at-point)
-(global-set-key (kbd "C-c e") 'dash-at-point-with-docset)
-
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;

@@ -110,6 +110,9 @@
 (depends-on "ac-js2")
 (depends-on "ac-emoji")
 
+;; Network
+(depends-on "restclient")
+
 ;; Helm
 (depends-on "helm")
 (depends-on "wgrep-helm")

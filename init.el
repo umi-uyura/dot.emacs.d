@@ -1082,6 +1082,8 @@
 (setq markdown-open-command "opentypora")
 (setq markdown-indent-on-enter t)
 (setq markdown-list-indent-width 2)
+(setq markdown-asymmetric-header t)
+(setq markdown-hide-urls t)
 
 ;; Hooks
 (defun my-markdown-mode-hook ()

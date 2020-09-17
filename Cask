@@ -92,7 +92,6 @@
 (depends-on "gradle-mode")
 
 ;; Programming - Scala
-(depends-on "ensime")
 (depends-on "play-routes-mode")
 
 ;; Programming

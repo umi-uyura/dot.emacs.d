@@ -1157,11 +1157,7 @@
 (setq jedi:environment-root (concat DOT_EMACS_VAR "/jedi/env"))
 
 
-;;;; ensime settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
 
-(setq ensime-startup-notification nil)
-(setq ensime-startup-snapshot-notification nil)
 
 
 ;;;; url settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -94,6 +94,10 @@
 ;; Programming - Scala
 (depends-on "play-routes-mode")
 
+;; Programming - Kotlin
+(depends-on "kotlin-mode")
+(depends-on "flycheck-kotlin")
+
 ;; Programming
 (depends-on "flycheck-pos-tip")
 (depends-on "markdown-mode")

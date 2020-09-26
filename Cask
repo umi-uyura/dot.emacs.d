@@ -66,6 +66,7 @@
 (depends-on "web-mode")
 (depends-on "js2-mode")
 (depends-on "json-mode")
+(depends-on "jq-mode")
 (depends-on "coffee-mode")
 (depends-on "jade-mode")
 (depends-on "pug-mode")

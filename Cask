@@ -43,6 +43,7 @@
 (depends-on "nyan-mode")
 (depends-on "jaword")
 (depends-on "emoji-cheat-sheet-plus")
+(depends-on "emojify")
 (depends-on "howm")
 
 ;; Grep/Find

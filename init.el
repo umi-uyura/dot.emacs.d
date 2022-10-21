@@ -83,23 +83,8 @@
 ;; exec-pathに追加
 (add-to-list 'exec-path (concat DOT_EMACS_HOME "/bin"))
 
-;; シェルから環境変数を読み込む
-(exec-path-from-shell-initialize)
-
 ;; PATHにexec-pathを追加
 (setenv "PATH" (mapconcat 'identity exec-path ":"))
-
-
-;;;; auto-install定義 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-
-(defvar auto-install-directory (concat DOT_EMACS_ELISP "/"))    ; 最後にスラッシュが必要・・・
-
-(when (require 'auto-install nil t)
-  (setq auto-install-use-wget t)
-  (auto-install-update-emacswiki-package-name t)
-  (auto-install-compatibility-setup)
-)
 
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -123,16 +108,16 @@
   (setq file-name-coding-system 'utf-8-hfs)
   (setq locale-coding-system 'utf-8-hfs)
 
-  (setq default-input-method "MacOSX")
+  ;;(setq default-input-method "MacOSX")
 
   ;; Google日本語入力連携
-  (mac-set-input-method-parameter "com.google.inputmethod.Japanese.base" `title "あ")
+  ;(mac-set-input-method-parameter "com.google.inputmethod.Japanese.base" `title "あ")
 
   ;; '\' を優先 -> '¥' が入力できなくなるため削除
   ;; (mac-translate-from-yen-to-backslash)
 
   ;; minibuffer 内は英数モードにする
-  (add-hook 'minibuffer-setup-hook 'mac-change-language-to-us)
+  ;(add-hook 'minibuffer-setup-hook 'mac-change-language-to-us)
 )
 ;; -------------------------------------Mac OS X用
 
@@ -248,10 +233,9 @@
   (setq mac-command-modifier 'super)    ; command => option
 
   ;; 日本語入力時でもショートカットキーが使えるようにする。
-  (defvar mac-pass-control-to-system nil)
-  (defvar mac-pass-command-to-system nil)
-  (defvar mac-pass-option-to-system nil)
-
+  ;; (setq mac-pass-control-to-system nil)
+  ;; (setq mac-pass-command-to-system nil)
+  ;; (setq mac-pass-option-to-system nil)
 )
 ;; -------------------------------------Mac OS X用
 
@@ -358,14 +342,17 @@
 ;;;; package.el ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 
-(when (require 'package nil t)
-  ;; 追加パッケージリポジトリサイト
-  (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-  ;(add-to-list 'package-archives  '("marmalade" . "http://marmalade-repo.org/packages/"))
+;; (when (require 'package nil t)
+;;   ;; 追加パッケージリポジトリサイト
+;;   (add-to-list 'package-archives '("melpa" . "https://melpa.milkbox.net/packages/"))
+;;   ;(add-to-list 'package-archives  '("marmalade" . "http://marmalade-repo.org/packages/"))
 
-  ;; 初期化
-  (package-initialize)
-)
+;;   ;; 初期化
+;;   ;; (package-initialize)
+
+;;   ;; (when (memq window-system '(mac ns x))
+;;   ;;   (exec-path-from-shell-initialize))
+;; )
 
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -377,15 +364,10 @@
 ;;;; theme ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 
-(load "moe-theme")
-
 (load-theme 'ample-zen t)
 (custom-theme-set-faces 'ample-zen
                         '(region ((t (:background "#4c4c4c"))))     ; 選択範囲
                         )
-
-;(load-theme 'alect-dark t)
-;(load-theme 'moe-dark t)
 
 
 ;;;; emacs server ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -577,21 +559,6 @@
 (define-key global-map (kbd "C-x M") 'moccur)
 
 
-;;;; igrep.el ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-
-(require 'igrep)
-
-(setq igrep-program "/usr/local/bin/lgrep")             ; コマンドをlgrepに変更
-;(setq igrep-options nil)
-(setq igrep-regex-option "-Ku8 -Ia -Ou8 -Du8")
-(setq igrep-find-use-xargs nil)                         ; xargsの使用：未使用（lgrepが未対応のため）
-(setq igrep-use-zgrep nil)
-
-(define-key global-map (kbd "C-x g") 'igrep)            ; igrep
-(define-key global-map (kbd "C-x G") 'igrep-find)       ; igrep-find
-
-
 ;;;; grep-edit.el ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; (install-elisp-from-emacswiki "grep-edit.el")
 ;;
@@ -647,7 +614,7 @@
 ;;;; relative-buffers ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 
-(global-relative-buffers-mode)
+;; (global-relative-buffers-mode)
 
 
 ;;;; Projectile ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -726,9 +693,9 @@
 ;; -------------------------------------Mac OS X用
 
 
-;; shell-commandで補完を有効にする
-(require 'shell-command)
-(shell-command-completion-mode)
+;; ;; shell-commandで補完を有効にする
+;; (require 'shell-command)
+;; (shell-command-completion-mode)
 
 ;; shell-modeでANSIカラーを有効にする
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
@@ -818,27 +785,23 @@
 ;;;; ruby-mode settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 
-(autoload 'ruby-mode "ruby-mode" "Major mode for ruby files" t)
-(add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
-(add-to-list 'interpreter-mode-alist '("ruby" . ruby-mode))
+;; (autoload 'ruby-mode "ruby-mode" "Major mode for ruby files" t)
+;; (add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
+;; (add-to-list 'interpreter-mode-alist '("ruby" . ruby-mode))
 
-;; ruby-block
-(require 'ruby-block)
-(ruby-block-mode t)
+;; ;; ruby-end
+;; (require 'ruby-end)
+;; (add-hook 'ruby-mode-hook
+;;           '(lambda ()
+;;              (abbrev-mode 1)
+;;              (electric-pair-mode t)
+;;              (electric-indent-mode t)
+;;              (electric-layout-mode t)))
 
-;; ruby-end
-(require 'ruby-end)
-(add-hook 'ruby-mode-hook
-          '(lambda ()
-             (abbrev-mode 1)
-             (electric-pair-mode t)
-             (electric-indent-mode t)
-             (electric-layout-mode t)))
-
-;; inf-ruby.el
-(autoload 'run-ruby "run-ruby" "Run an inferior Ruby process")
-(autoload 'inf-ruby-keys "inf-ruby" "Set local key defs for inf-ruby in ruby-mode")
-(add-hook 'ruby-mode-hook '(lambda () (inf-ruby-keys)))
+;; ;; inf-ruby.el
+;; (autoload 'run-ruby "run-ruby" "Run an inferior Ruby process")
+;; (autoload 'inf-ruby-keys "inf-ruby" "Set local key defs for inf-ruby in ruby-mode")
+;; (add-hook 'ruby-mode-hook '(lambda () (inf-ruby-keys)))
 
 
 ;;;; js2(javascript)-mode settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -1151,13 +1114,22 @@
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
 (add-to-list 'interpreter-mode-alist '("python" . python-mode))
 
-;; Jedi
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)
-(setq jedi:environment-root (concat DOT_EMACS_VAR "/jedi/env"))
+(add-hook 'python-mode-hook
+          (lambda ()
+            ;; (setq-default indent-tabs-mode t)
+            (setq-default tab-width 2)
+            ;; (setq-default py-indent-tabs-mode t)
+            ;; (add-to-list 'write-file-functions 'delete-trailing-whitespace)
+            ))
 
+(custom-set-variables
+ '(py-indent-offset 2)
+ )
 
-
+;; ;; Jedi
+;; (add-hook 'python-mode-hook 'jedi:setup)
+;; (setq jedi:complete-on-dot t)
+;; (setq jedi:environment-root (concat DOT_EMACS_VAR "/jedi/env"))
 
 
 ;;;; url settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -1249,7 +1221,8 @@
  '(flycheck-disabled-checkers '(javascript-jshint javascript-jscs)))
 
 (with-eval-after-load 'flycheck
-  (defconst flycheck-error-list-format [("Line" 4 flycheck-error-list-entry-< :right-align t)
+  (defconst flycheck-error-list-format [("File" 6)
+                                        ("Line" 4 flycheck-error-list-entry-< :right-align t)
                                         ("Col" 3 nil :right-align t)
                                         ("Level" 8 flycheck-error-list-entry-level-<)
                                         ("ID" 20 t)
@@ -1320,6 +1293,12 @@
 (nyan-mode 0)
 
 
+;;;; crowi-mode settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+
+(load "crowi-config")
+
+
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;; External services Configration
@@ -1345,6 +1324,9 @@
 (global-set-key (kbd "C-c g t") 'google-translate-at-point)
 (global-set-key (kbd "C-c g T") 'google-translate-smooth-translate)
 
+; https://github.com/atykhonov/google-translate/issues/52#issuecomment-828725541
+(defun google-translate--search-tkk () "Search TKK." (list 430675 2721866130))
+(setq google-translate-backend-method 'curl)
 
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

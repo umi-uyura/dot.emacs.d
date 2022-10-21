@@ -24,7 +24,6 @@
 (depends-on "use-package")
 
 ;; Package Management
-(depends-on "auto-install")
 ;; (depends-on "paradox")
 
 ;; Look and feel
@@ -49,7 +48,6 @@
 ;; Grep/Find
 (depends-on "color-moccur")
 (depends-on "grep-a-lot")
-(depends-on "igrep")
 (depends-on "pt")
 (depends-on "wgrep-pt")
 (depends-on "rg")
@@ -82,7 +80,6 @@
 
 ;; Programming - Ruby
 (depends-on "ruby-mode")
-(depends-on "ruby-block")
 (depends-on "ruby-end")
 (depends-on "inf-ruby")
 
@@ -107,6 +104,7 @@
 (depends-on "yaml-mode")
 (depends-on "csv-mode")
 (depends-on "cask-mode")
+(depends-on "textile-mode")
 
 ;; Auto complete
 (depends-on "auto-complete")
@@ -126,7 +124,7 @@
 (depends-on "sudo-ext")
 (depends-on "recentf-ext")
 (depends-on "open-junk-file")
-(depends-on "relative-buffers")
+;(depends-on "relative-buffers")
 (depends-on "osx-dictionary")
 
 ;; External services
